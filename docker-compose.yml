@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  vnc-server: 
+    build: 
+      context: image/ubuntu
+    privileged: true
+    environment:
+      - TZ='Asia/Taipei'
+      - ACCTPASS='1234'
+    volumes:
+      - /home/arthur/Desktop:/home/arthur/Desktop:rw
+    ports:
+      - "5901:5901"
